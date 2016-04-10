@@ -41,7 +41,7 @@ public abstract class EvalDataStoreIterator extends AbstractTest {
     }
     
     protected SegmentFactory createSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     protected abstract DataStore<byte[], byte[]> createDataStore(File storeDir) throws Exception;

@@ -53,7 +53,7 @@ public class TestIndexedStoreSmallIndex extends EvalDataStore {
         config.setNumSyncBatches(100);
         
         // Configure store segments
-        config.setSegmentFactory(new krati.core.segment.WriteBufferSegmentFactory());
+        config.setSegmentFactory(new krati.core.segment.writebuffer.WriteBufferSegmentFactory());
         config.setSegmentFileSizeMB(_segFileSizeMB);
         config.setSegmentCompactFactor(0.67);
         

@@ -20,7 +20,7 @@ import java.io.File;
 
 import krati.core.segment.Segment;
 import krati.core.segment.SegmentFactory;
-import krati.core.segment.WriteBufferSegmentFactory;
+import krati.core.segment.writebuffer.WriteBufferSegmentFactory;
 import krati.io.Serializer;
 import krati.retention.clock.Clock;
 import krati.retention.policy.RetentionPolicy;

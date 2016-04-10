@@ -21,7 +21,7 @@ import java.util.Random;
 
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
-import krati.core.segment.WriteBufferSegmentFactory;
+import krati.core.segment.writebuffer.WriteBufferSegmentFactory;
 import krati.store.BytesDB;
 import test.util.FileUtils;
 

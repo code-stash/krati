@@ -34,10 +34,10 @@ import krati.core.array.entry.EntryPersistAdapter;
 import krati.core.array.entry.EntryValue;
 import krati.core.segment.AddressFormat;
 import krati.core.segment.Segment;
-import krati.core.segment.SegmentException;
-import krati.core.segment.SegmentIndexBuffer;
 import krati.core.segment.SegmentManager;
-import krati.core.segment.SegmentOverflowException;
+import krati.core.segment.exception.SegmentException;
+import krati.core.segment.exception.SegmentOverflowException;
+import krati.core.segment.index.SegmentIndexBuffer;
 import krati.io.Closeable;
 
 /**

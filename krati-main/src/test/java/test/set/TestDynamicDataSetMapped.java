@@ -16,8 +16,8 @@
 
 package test.set;
 
-import krati.core.segment.MappedSegmentFactory;
 import krati.core.segment.SegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
 
 /**
  * TestDynamicDataSetMapped

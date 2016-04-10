@@ -26,7 +26,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import krati.core.StoreConfig;
-import krati.core.segment.MappedSegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
 import krati.io.Serializer;
 import krati.io.serializer.StringSerializer;
 import krati.store.DataStore;

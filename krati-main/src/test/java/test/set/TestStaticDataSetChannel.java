@@ -16,8 +16,8 @@
 
 package test.set;
 
-import krati.core.segment.ChannelSegmentFactory;
 import krati.core.segment.SegmentFactory;
+import krati.core.segment.channel.ChannelSegmentFactory;
 
 /**
  * TestStaticDataSetChannel

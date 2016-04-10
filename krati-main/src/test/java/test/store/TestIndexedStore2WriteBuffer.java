@@ -27,6 +27,6 @@ import krati.core.segment.SegmentFactory;
 public class TestIndexedStore2WriteBuffer extends TestIndexedStore2 {
     @Override
     protected SegmentFactory createStoreSegmentFactory() {
-        return new krati.core.segment.WriteBufferSegmentFactory();
+        return new krati.core.segment.writebuffer.WriteBufferSegmentFactory();
     }
 }

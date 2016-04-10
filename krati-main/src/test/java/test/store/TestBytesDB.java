@@ -24,9 +24,9 @@ import test.util.FileUtils;
 import test.util.RandomBytes;
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
-import krati.core.segment.MemorySegmentFactory;
 import krati.core.segment.Segment;
 import krati.core.segment.SegmentFactory;
+import krati.core.segment.memory.MemorySegmentFactory;
 import krati.store.BytesDB;
 
 /**

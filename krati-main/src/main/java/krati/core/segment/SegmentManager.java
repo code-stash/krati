@@ -28,6 +28,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 import krati.Mode;
+import krati.core.segment.index.SegmentIndexBuffer;
+import krati.core.segment.index.SegmentIndexBufferException;
+import krati.core.segment.index.SegmentIndexBufferManager;
 import krati.io.Closeable;
 
 import org.apache.log4j.Logger;

@@ -47,7 +47,7 @@ public class TestSystemExit extends TestCase {
     }
     
     protected SegmentFactory getSegmentFactory() {
-        return new krati.core.segment.WriteBufferSegmentFactory();
+        return new krati.core.segment.writebuffer.WriteBufferSegmentFactory();
     }
     
     protected DataStore<byte[], byte[]> create(File storeDir) throws Exception {

@@ -21,7 +21,7 @@ import java.io.IOException;
 import test.util.FileUtils;
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
-import krati.core.segment.MappedSegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
 import krati.store.DataStore;
 import krati.store.DynamicDataStore;
 import krati.store.IndexedDataStore;

@@ -14,21 +14,22 @@
  * the License.
  */
 
-package krati.core.segment;
-
-import java.io.File;
-import java.io.IOException;
+package krati.core.segment.exception;
 
 /**
- * DirectBufferSegmentFactory
+ * SegmentException
  * 
  * @author jwu
- * @since 08/20, 2012
+ * 
  */
-public class DirectBufferSegmentFactory implements SegmentFactory {
+public class SegmentException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
+
+    public SegmentException(String message) {
+        super(message);
+    }
     
-    @Override
-    public Segment createSegment(int segmentId, File segmentFile, int initialSizeMB, Segment.Mode mode) throws IOException {
-        return new DirectBufferSegment(segmentId, segmentFile, initialSizeMB, mode);
+    public final static SegmentException segmentNotFound(int segId) {
+        return new SegmentException("Segment not found: " + segId);
     }
 }

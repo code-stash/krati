@@ -267,7 +267,7 @@ public class TestDataPartition extends AbstractTest {
     }
     
     protected SegmentFactory getSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     protected ArrayStorePartition getDataPartition(File homeDir) throws Exception {

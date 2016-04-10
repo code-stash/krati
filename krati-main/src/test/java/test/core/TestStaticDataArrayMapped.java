@@ -32,7 +32,7 @@ public class TestStaticDataArrayMapped extends EvalDataArray {
     
     @Override
     protected SegmentFactory createSegmentFactory() {
-        return new krati.core.segment.MappedSegmentFactory();
+        return new krati.core.segment.mapped.MappedSegmentFactory();
     }
     
     @Override

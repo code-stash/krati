@@ -27,6 +27,6 @@ import krati.core.segment.SegmentFactory;
 public class TestDynamicStoreChannel extends TestDynamicStore {
     @Override
     protected SegmentFactory getSegmentFactory() {
-        return new krati.core.segment.ChannelSegmentFactory();
+        return new krati.core.segment.channel.ChannelSegmentFactory();
     }
 }

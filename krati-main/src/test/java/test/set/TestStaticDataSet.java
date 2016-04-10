@@ -19,9 +19,8 @@ package test.set;
 import java.io.File;
 
 import test.StatsLog;
-
-import krati.core.segment.MemorySegmentFactory;
 import krati.core.segment.SegmentFactory;
+import krati.core.segment.memory.MemorySegmentFactory;
 import krati.store.DataSet;
 import krati.store.StaticDataSet;
 

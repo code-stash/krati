@@ -28,10 +28,10 @@ public class TestIndexedStore2 extends TestIndexedStore {
     
     @Override
     protected SegmentFactory createIndexSegmentFactory() {
-        return new krati.core.segment.DirectBufferSegmentFactory();
+        return new krati.core.segment.directbuffer.DirectBufferSegmentFactory();
     }
     
     protected SegmentFactory createStoreSegmentFactory() {
-        return new krati.core.segment.DirectBufferSegmentFactory();
+        return new krati.core.segment.directbuffer.DirectBufferSegmentFactory();
     }
 }

@@ -27,6 +27,6 @@ import krati.core.segment.SegmentFactory;
 public class TestDataPartitionMapped extends TestDataPartition {
     @Override
     protected SegmentFactory getSegmentFactory() {
-       return new krati.core.segment.MappedSegmentFactory();
+       return new krati.core.segment.mapped.MappedSegmentFactory();
     }
 }

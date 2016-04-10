@@ -27,6 +27,6 @@ import krati.core.segment.SegmentFactory;
 public class TestDataParitionChannel extends TestDataPartition {
     @Override
     protected SegmentFactory getSegmentFactory() {
-        return new krati.core.segment.ChannelSegmentFactory();
+        return new krati.core.segment.channel.ChannelSegmentFactory();
     }
 }

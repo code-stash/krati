@@ -28,10 +28,10 @@ import krati.core.StorePartitionConfig;
 import krati.core.array.AddressArray;
 import krati.core.array.AddressArrayFactory;
 import krati.core.array.SimpleDataArray;
-import krati.core.segment.MappedSegmentFactory;
 import krati.core.segment.Segment;
 import krati.core.segment.SegmentFactory;
 import krati.core.segment.SegmentManager;
+import krati.core.segment.mapped.MappedSegmentFactory;
 
 /**
  * StaticArrayStorePartition

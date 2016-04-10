@@ -37,7 +37,7 @@ public class TestStaticStore extends EvalDataStore {
     }
     
     protected SegmentFactory getSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     @Override

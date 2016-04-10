@@ -51,7 +51,7 @@ public class TestAvroArray extends TestCase {
     protected File _storeDir;
     
     protected SegmentFactory createSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     protected ArrayStore createArrayStore(File storeDir, int capacity) throws Exception {

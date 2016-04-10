@@ -19,7 +19,7 @@ package test.hash;
 import java.io.File;
 import java.io.IOException;
 
-import krati.core.segment.MemorySegmentFactory;
+import krati.core.segment.memory.MemorySegmentFactory;
 import krati.store.StaticDataSet;
 import krati.util.HashFunction;
 import test.AbstractTest;

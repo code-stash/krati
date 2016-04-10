@@ -25,8 +25,8 @@ import junit.framework.TestCase;
 import krati.core.StoreFactory;
 import krati.core.StoreParams;
 import krati.core.array.basic.DynamicConstants;
-import krati.core.segment.MappedSegmentFactory;
 import krati.core.segment.SegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
 import krati.store.DataSet;
 
 /**

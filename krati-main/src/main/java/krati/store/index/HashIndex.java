@@ -27,7 +27,7 @@ import krati.util.IndexedIterator;
 
 /**
  * HashIndex is for serving index lookup from main memory and has the
- * best performance when {@link krati.core.segment.MemorySegmentFactory MemorySegmentFactory}
+ * best performance when {@link krati.core.segment.memory.MemorySegmentFactory MemorySegmentFactory}
  * is used to store indexes in memory.
  * 
  * @author jwu

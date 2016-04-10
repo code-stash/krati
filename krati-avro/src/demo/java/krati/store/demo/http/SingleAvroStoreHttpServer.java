@@ -22,7 +22,7 @@ import java.util.List;
 
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.core.segment.MemorySegmentFactory;
+import krati.core.segment.memory.MemorySegmentFactory;
 import krati.store.DataStore;
 import krati.store.avro.protocol.BasicDataStoreResponder;
 import krati.store.avro.protocol.StoreKeys;

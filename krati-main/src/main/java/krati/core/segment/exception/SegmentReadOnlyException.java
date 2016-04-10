@@ -14,21 +14,26 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.exception;
 
-import java.io.File;
-import java.io.IOException;
+import krati.core.segment.Segment;
 
 /**
- * MappedSegmentFactory
+ * SegmentReadOnlyException
  * 
  * @author jwu
  * 
  */
-public class MappedSegmentFactory implements SegmentFactory {
-    
-    @Override
-    public Segment createSegment(int segmentId, File segmentFile, int initialSizeMB, Segment.Mode mode) throws IOException {
-        return new MappedSegment(segmentId, segmentFile, initialSizeMB, mode);
+public class SegmentReadOnlyException extends SegmentException {
+    private final static long serialVersionUID = 1L;
+    private final Segment segment;
+
+    public SegmentReadOnlyException(Segment seg) {
+        super("Failed to write to read-only segment: " + seg.getSegmentId());
+        this.segment = seg;
+    }
+
+    public Segment getSegment() {
+        return segment;
     }
 }

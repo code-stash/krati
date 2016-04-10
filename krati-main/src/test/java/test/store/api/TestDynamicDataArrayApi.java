@@ -20,9 +20,8 @@ import java.io.File;
 import java.util.Arrays;
 
 import test.util.RandomBytes;
-
-import krati.core.segment.MappedSegmentFactory;
 import krati.core.segment.Segment;
+import krati.core.segment.mapped.MappedSegmentFactory;
 import krati.store.ArrayStore;
 import krati.store.DynamicDataArray;
 

@@ -14,21 +14,25 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.mapped;
 
 import java.io.File;
 import java.io.IOException;
 
+import krati.core.segment.Segment;
+import krati.core.segment.SegmentFactory;
+import krati.core.segment.Segment.Mode;
+
 /**
- * MemorySegmentFactory
+ * MappedSegmentFactory
  * 
  * @author jwu
  * 
  */
-public class MemorySegmentFactory implements SegmentFactory {
+public class MappedSegmentFactory implements SegmentFactory {
     
     @Override
     public Segment createSegment(int segmentId, File segmentFile, int initialSizeMB, Segment.Mode mode) throws IOException {
-        return new MemorySegment(segmentId, segmentFile, initialSizeMB, mode);
+        return new MappedSegment(segmentId, segmentFile, initialSizeMB, mode);
     }
 }

@@ -14,40 +14,44 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.channel;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
+import java.nio.BufferOverflowException;
 import java.nio.channels.WritableByteChannel;
 
 import org.apache.log4j.Logger;
 
+import krati.core.segment.AbstractSegment;
+import krati.core.segment.Segment;
+import krati.core.segment.Segment.Mode;
+import krati.core.segment.exception.SegmentOverflowException;
+import krati.core.segment.exception.SegmentReadOnlyException;
+import krati.core.segment.exception.SegmentOverflowException.Type;
+
 /**
- * MemorySegment
+ * ChannelSegment
  * 
  * @author jwu
  * 
  */
-public class MemorySegment extends AbstractSegment {
-    private final static Logger _log = Logger.getLogger(MemorySegment.class);
-    protected ByteBuffer _buffer;
+public class ChannelSegment extends AbstractSegment {
+    private final static Logger _log = Logger.getLogger(ChannelSegment.class);
 
-    public MemorySegment(int segmentId, File segmentFile, int initialSizeMB, Segment.Mode mode) throws IOException {
+    public ChannelSegment(int segmentId, File segmentFile, int initialSizeMB, Segment.Mode mode) throws IOException {
         super(segmentId, segmentFile, initialSizeMB, mode);
     }
 
     @Override
     protected void init() throws IOException {
-        _buffer = initByteBuffer();
-
         if (!getSegmentFile().exists()) {
             if (!getSegmentFile().createNewFile()) {
                 String msg = "Failed to create " + getSegmentFile().getAbsolutePath();
 
-                logger().error(msg);
+                _log.error(msg);
                 throw new IOException(msg);
             }
 
@@ -64,12 +68,9 @@ public class MemorySegment extends AbstractSegment {
             _channel = _raf.getChannel();
             _channel.position(0);
 
-            // read into memory buffer
-            _channel.read(_buffer);
-
             loadHeader();
 
-            logger().info("Segment " + getSegmentId() + " loaded: " + getHeader());
+            _log.info("Segment " + getSegmentId() + " loaded: " + getHeader());
         } else {
             _raf = new RandomAccessFile(getSegmentFile(), "rw");
 
@@ -80,27 +81,18 @@ public class MemorySegment extends AbstractSegment {
 
             initHeader();
 
-            logger().info("Segment " + getSegmentId() + " initialized: " + getStatus());
+            _log.info("Segment " + getSegmentId() + " initialized: " + getStatus());
         }
-    }
-
-    protected ByteBuffer initByteBuffer() {
-        int bufferLength = (int) ((_initSizeMB < Segment.maxSegmentFileSizeMB) ? _initSizeBytes : (_initSizeBytes - 1));
-        return ByteBuffer.wrap(new byte[bufferLength]);
-    }
-
-    protected Logger logger() {
-        return _log;
     }
 
     @Override
     public long getAppendPosition() throws IOException {
-        return _buffer.position();
+        return _channel.position();
     }
 
     @Override
     public void setAppendPosition(long newPosition) throws IOException {
-        _buffer.position((int) newPosition);
+        _channel.position(newPosition);
     }
 
     @Override
@@ -110,8 +102,15 @@ public class MemorySegment extends AbstractSegment {
         }
 
         try {
-            int pos = _buffer.position();
-            _buffer.putInt(value);
+            int pos = (int) _channel.position();
+            if ((pos + 4) >= _initSizeBytes) {
+                throw new BufferOverflowException();
+            }
+
+            ByteBuffer bb = ByteBuffer.wrap(new byte[4]);
+            bb.putInt(value);
+            bb.flip();
+            _channel.write(bb);
             incrLoadSize(4);
             return pos;
         } catch (BufferOverflowException boe) {
@@ -127,8 +126,15 @@ public class MemorySegment extends AbstractSegment {
         }
 
         try {
-            int pos = _buffer.position();
-            _buffer.putLong(value);
+            int pos = (int) _channel.position();
+            if ((pos + 8) >= _initSizeBytes) {
+                throw new BufferOverflowException();
+            }
+
+            ByteBuffer bb = ByteBuffer.wrap(new byte[8]);
+            bb.putLong(value);
+            bb.flip();
+            _channel.write(bb);
             incrLoadSize(8);
             return pos;
         } catch (BufferOverflowException boe) {
@@ -144,8 +150,15 @@ public class MemorySegment extends AbstractSegment {
         }
 
         try {
-            int pos = _buffer.position();
-            _buffer.putShort(value);
+            int pos = (int) _channel.position();
+            if ((pos + 2) >= _initSizeBytes) {
+                throw new BufferOverflowException();
+            }
+
+            ByteBuffer bb = ByteBuffer.wrap(new byte[2]);
+            bb.putShort(value);
+            bb.flip();
+            _channel.write(bb);
             incrLoadSize(2);
             return pos;
         } catch (BufferOverflowException boe) {
@@ -161,8 +174,13 @@ public class MemorySegment extends AbstractSegment {
         }
 
         try {
-            int pos = _buffer.position();
-            _buffer.put(data);
+            int pos = (int) _channel.position();
+            if ((pos + data.length) >= _initSizeBytes) {
+                throw new BufferOverflowException();
+            }
+
+            ByteBuffer bb = ByteBuffer.wrap(data);
+            _channel.write(bb);
             incrLoadSize(data.length);
             return pos;
         } catch (BufferOverflowException boe) {
@@ -178,8 +196,13 @@ public class MemorySegment extends AbstractSegment {
         }
 
         try {
-            int pos = _buffer.position();
-            _buffer.put(data, offset, length);
+            int pos = (int) _channel.position();
+            if ((pos + length) >= _initSizeBytes) {
+                throw new BufferOverflowException();
+            }
+
+            ByteBuffer bb = ByteBuffer.wrap(data, offset, length);
+            _channel.write(bb);
             incrLoadSize(length);
             return pos;
         } catch (BufferOverflowException boe) {
@@ -190,33 +213,44 @@ public class MemorySegment extends AbstractSegment {
 
     @Override
     public int readInt(int pos) throws IOException {
-        return _buffer.getInt(pos);
+        ByteBuffer bb = ByteBuffer.wrap(new byte[4]);
+        _channel.read(bb, pos);
+        return bb.getInt(0);
     }
 
     @Override
     public long readLong(int pos) throws IOException {
-        return _buffer.getLong(pos);
+        ByteBuffer bb = ByteBuffer.wrap(new byte[8]);
+        _channel.read(bb, pos);
+        return bb.getLong(0);
     }
 
     @Override
     public short readShort(int pos) throws IOException {
-        return _buffer.getShort(pos);
+        ByteBuffer bb = ByteBuffer.wrap(new byte[2]);
+        _channel.read(bb, pos);
+        return bb.getShort(0);
     }
 
     @Override
     public void read(int pos, byte[] dst) throws IOException {
-        System.arraycopy(_buffer.array(), pos, dst, 0, dst.length);
+        ByteBuffer bb = ByteBuffer.wrap(dst);
+        _channel.read(bb, pos);
     }
 
     @Override
     public void read(int pos, byte[] dst, int offset, int length) throws IOException {
-        System.arraycopy(_buffer.array(), pos, dst, offset, length);
+        ByteBuffer bb = ByteBuffer.wrap(dst, offset, length);
+        _channel.read(bb, pos);
     }
 
     @Override
     public int transferTo(int pos, int length, Segment targetSegment) throws IOException {
-        if ((pos + length) <= _buffer.position()) {
-            targetSegment.append(_buffer.array(), pos, length);
+        if ((pos + length) <= _initSizeBytes) {
+            byte[] dst = new byte[length];
+            this.read(pos, dst);
+
+            targetSegment.append(dst);
             return length;
         }
 
@@ -225,36 +259,7 @@ public class MemorySegment extends AbstractSegment {
 
     @Override
     public int transferTo(int pos, int length, WritableByteChannel targetChannel) throws IOException {
-        /**
-         * Channel-based JavaNio zero copy (channel-to-channel transfer) does
-         * not work for MemorySegment because: 1. MemorySegment uses a large
-         * amount of memory. 2. OS IO cache also uses a large amount of memory.
-         * 3. Both will compete for memory and cause memory thrashing.
-         * 
-         * For example, a worst case scenario can be something like the
-         * following:
-         * 
-         * The machine has 24 GB, and JVM has -Xmx16GB, and each write is about
-         * 1 to 2 KB.
-         * 
-         * Each MemorySegment is almost 50% fragmented. For 10GB data, the total
-         * memory hold by MemorySegment can be approximately ~20GB. When
-         * compaction kicks off, the compactor will basically compact all the
-         * segments one by one. Channel-based zero copy can extend IO cache up
-         * to 10-20GB.
-         * 
-         * This can put extreme pressure on memory and decrease the write
-         * performance of MemorySegment significantly. The test shows the write
-         * rate of MemorySegment can decrease from 20~30/ms to 0.5/ms.
-         * 
-         * The better solution is to write data from memory to channel directly.
-         */
-        if ((pos + length) <= _buffer.position()) {
-            targetChannel.write(ByteBuffer.wrap(_buffer.array(), (int) pos, length));
-            return length;
-        }
-
-        throw new SegmentOverflowException(this, SegmentOverflowException.Type.READ_OVERFLOW);
+        return (int) _channel.transferTo(pos, length, targetChannel);
     }
 
     @Override
@@ -262,7 +267,7 @@ public class MemorySegment extends AbstractSegment {
         if (getMode() == Segment.Mode.READ_WRITE) {
             force();
             _segMode = Segment.Mode.READ_ONLY;
-            logger().info("Segment " + getSegmentId() + " switched to " + getMode());
+            _log.info("Segment " + getSegmentId() + " switched to " + getMode());
         }
     }
 
@@ -270,12 +275,6 @@ public class MemorySegment extends AbstractSegment {
     public synchronized void force() throws IOException {
         if (_channel == null) return;
         if (getMode() == Segment.Mode.READ_WRITE) {
-            int offset = (int) _channel.position();
-            int length = _buffer.position() - offset;
-            if (length > 0) {
-                _channel.write(ByteBuffer.wrap(_buffer.array(), offset, length));
-            }
-
             long currentTime = System.currentTimeMillis();
             ByteBuffer bb = ByteBuffer.wrap(new byte[8]);
             bb.putLong(currentTime);
@@ -285,20 +284,19 @@ public class MemorySegment extends AbstractSegment {
         }
 
         _channel.force(true);
-        logger().info("Segment " + getSegmentId() + " forced: " + getStatus());
+        _log.info("Segment " + getSegmentId() + " forced: " + getStatus());
     }
 
     @Override
     public synchronized void close(boolean force) throws IOException {
-        if (force) {
+        if (force)
             force();
-        }
-        
+
         if (_channel != null) {
             _channel.close();
             _channel = null;
         }
-        
+
         if (_raf != null) {
             _raf.close();
             _raf = null;
@@ -306,47 +304,22 @@ public class MemorySegment extends AbstractSegment {
     }
 
     @Override
-    public synchronized void reinit() throws IOException {
-        _buffer.clear();
-        _segMode = Segment.Mode.READ_WRITE;
-
-        if (!getSegmentFile().exists()) {
-            if (!getSegmentFile().createNewFile()) {
-                String msg = "Failed to create " + getSegmentFile().getAbsolutePath();
-
-                logger().error(msg);
-                throw new IOException(msg);
-            }
-
-            RandomAccessFile raf = new RandomAccessFile(getSegmentFile(), "rw");
-            raf.setLength(getInitialSize());
-            raf.close();
-        }
-
-        _raf = new RandomAccessFile(getSegmentFile(), "rw");
-
-        checkSegmentSize();
-
-        _channel = _raf.getChannel();
-        _channel.position(0);
-
-        initHeader();
-
-        logger().info("Segment " + getSegmentId() + " initialized: " + getStatus());
+    public void reinit() throws IOException, UnsupportedOperationException {
+        throw new UnsupportedOperationException("reinit not supported");
     }
 
     @Override
-    public final boolean isRecyclable() {
-        return true;
+    public boolean isRecyclable() {
+        return false;
     }
 
     @Override
-    public final boolean canReadFromBuffer() {
-        return true;
+    public boolean canReadFromBuffer() {
+        return false;
     }
 
     @Override
-    public final boolean canAppendToBuffer() {
-        return true;
+    public boolean canAppendToBuffer() {
+        return false;
     }
 }

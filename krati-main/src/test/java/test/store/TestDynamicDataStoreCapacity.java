@@ -23,7 +23,7 @@ import java.util.Random;
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
 import krati.core.array.basic.DynamicConstants;
-import krati.core.segment.ChannelSegmentFactory;
+import krati.core.segment.channel.ChannelSegmentFactory;
 import krati.store.DynamicDataStore;
 import test.util.DirUtils;
 

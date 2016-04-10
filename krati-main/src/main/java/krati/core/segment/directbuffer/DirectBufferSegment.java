@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.directbuffer;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,6 +22,12 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
 import org.apache.log4j.Logger;
+
+import krati.core.segment.Segment;
+import krati.core.segment.Segment.Mode;
+import krati.core.segment.exception.SegmentOverflowException;
+import krati.core.segment.exception.SegmentOverflowException.Type;
+import krati.core.segment.memory.MemorySegment;
 
 /**
  * DirectBufferSegment uses system memory instead of JVM memory. Using DirectBufferSegment requires

@@ -27,6 +27,6 @@ import krati.core.segment.SegmentFactory;
 public class TestIndexedStoreMapped extends TestIndexedStore {
     @Override
     protected SegmentFactory createStoreSegmentFactory() {
-        return new krati.core.segment.MappedSegmentFactory();
+        return new krati.core.segment.mapped.MappedSegmentFactory();
     }
 }

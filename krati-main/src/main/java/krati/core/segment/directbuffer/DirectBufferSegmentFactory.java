@@ -14,21 +14,25 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.directbuffer;
 
 import java.io.File;
 import java.io.IOException;
 
+import krati.core.segment.Segment;
+import krati.core.segment.SegmentFactory;
+import krati.core.segment.Segment.Mode;
+
 /**
- * ChannelSegmentFactory
+ * DirectBufferSegmentFactory
  * 
  * @author jwu
- * 
+ * @since 08/20, 2012
  */
-public class ChannelSegmentFactory implements SegmentFactory {
+public class DirectBufferSegmentFactory implements SegmentFactory {
     
     @Override
     public Segment createSegment(int segmentId, File segmentFile, int initialSizeMB, Segment.Mode mode) throws IOException {
-        return new ChannelSegment(segmentId, segmentFile, initialSizeMB, mode);
+        return new DirectBufferSegment(segmentId, segmentFile, initialSizeMB, mode);
     }
 }

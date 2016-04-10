@@ -29,8 +29,8 @@ import test.util.FileUtils;
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.core.segment.MappedSegmentFactory;
 import krati.core.segment.SegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
 import krati.store.DataStore;
 
 /**

@@ -44,7 +44,7 @@ public class TestObjectStore extends AbstractTest {
     }
     
     protected SegmentFactory getSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     protected DataStore<byte[], byte[]> getDataStore(File storeDir, int capacity) throws Exception {

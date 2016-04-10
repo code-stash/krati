@@ -36,11 +36,11 @@ public class TestIndexedStore extends EvalDataStore {
     }
     
     protected SegmentFactory createIndexSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     protected SegmentFactory createStoreSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     @Override

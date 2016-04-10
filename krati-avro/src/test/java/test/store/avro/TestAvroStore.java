@@ -52,7 +52,7 @@ public class TestAvroStore extends TestCase {
     protected File _storeDir;
     
     protected SegmentFactory createSegmentFactory() {
-        return new krati.core.segment.MemorySegmentFactory();
+        return new krati.core.segment.memory.MemorySegmentFactory();
     }
     
     protected DataStore<byte[], byte[]> createDataStore(File storeDir, int capacity) throws Exception {

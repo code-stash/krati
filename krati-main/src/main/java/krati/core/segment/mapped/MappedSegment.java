@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.mapped;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +25,13 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.WritableByteChannel;
 
 import org.apache.log4j.Logger;
+
+import krati.core.segment.AbstractSegment;
+import krati.core.segment.Segment;
+import krati.core.segment.Segment.Mode;
+import krati.core.segment.exception.SegmentOverflowException;
+import krati.core.segment.exception.SegmentReadOnlyException;
+import krati.core.segment.exception.SegmentOverflowException.Type;
 
 /**
  * MappedSegment

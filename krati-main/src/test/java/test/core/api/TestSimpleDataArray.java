@@ -50,7 +50,7 @@ public class TestSimpleDataArray extends AbstractTest {
     }
     
     protected SegmentFactory createSegmentFactory() {
-        return new krati.core.segment.ChannelSegmentFactory();
+        return new krati.core.segment.channel.ChannelSegmentFactory();
     }
     
     protected AddressArray createAddressArray(File homeDir) throws Exception {

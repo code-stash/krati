@@ -26,7 +26,7 @@ import junit.framework.TestCase;
 
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.core.segment.MemorySegmentFactory;
+import krati.core.segment.memory.MemorySegmentFactory;
 import krati.store.DataSet;
 
 /**

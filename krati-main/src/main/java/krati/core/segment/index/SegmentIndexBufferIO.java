@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.index;
 
 import java.io.File;
 import java.io.IOException;

@@ -18,8 +18,8 @@ package test.store.api;
 
 import java.io.File;
 
-import krati.core.segment.MappedSegmentFactory;
-import krati.core.segment.MemorySegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
+import krati.core.segment.memory.MemorySegmentFactory;
 import krati.store.DataStore;
 import krati.store.IndexedDataStore;
 

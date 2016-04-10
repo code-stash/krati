@@ -23,10 +23,10 @@ import java.util.Random;
 import test.util.FileUtils;
 
 import junit.framework.TestCase;
-import krati.core.segment.SegmentIndexBuffer;
-import krati.core.segment.SegmentIndexBufferException;
-import krati.core.segment.SegmentIndexBufferFileIO;
-import krati.core.segment.SegmentIndexBufferIO;
+import krati.core.segment.index.SegmentIndexBuffer;
+import krati.core.segment.index.SegmentIndexBufferException;
+import krati.core.segment.index.SegmentIndexBufferFileIO;
+import krati.core.segment.index.SegmentIndexBufferIO;
 
 /**
  * TestSegmentIndexBufferIO

@@ -27,8 +27,8 @@ import java.io.Reader;
 import java.util.Properties;
 import java.util.Set;
 
-import krati.core.segment.MappedSegmentFactory;
 import krati.core.segment.SegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
 import krati.store.DataHandler;
 import krati.store.DefaultDataSetHandler;
 import krati.store.DefaultDataStoreHandler;

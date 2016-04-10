@@ -37,10 +37,10 @@ import krati.core.StoreParams;
 import org.apache.log4j.Logger;
 
 import krati.core.segment.AddressFormat;
-import krati.core.segment.MemorySegment;
 import krati.core.segment.Segment;
-import krati.core.segment.SegmentIndexBuffer;
 import krati.core.segment.SegmentManager;
+import krati.core.segment.index.SegmentIndexBuffer;
+import krati.core.segment.memory.MemorySegment;
 import krati.util.Chronos;
 import krati.util.DaemonThreadFactory;
 

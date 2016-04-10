@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.index;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;

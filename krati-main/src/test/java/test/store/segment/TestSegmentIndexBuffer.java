@@ -19,7 +19,7 @@ package test.store.segment;
 import java.util.Random;
 
 import junit.framework.TestCase;
-import krati.core.segment.SegmentIndexBuffer;
+import krati.core.segment.index.SegmentIndexBuffer;
 
 /**
  * TestSegmentIndexBuffer

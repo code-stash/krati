@@ -14,22 +14,25 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.channel;
+
+import java.io.File;
+import java.io.IOException;
+
+import krati.core.segment.Segment;
+import krati.core.segment.SegmentFactory;
+import krati.core.segment.Segment.Mode;
 
 /**
- * SegmentException
+ * ChannelSegmentFactory
  * 
  * @author jwu
  * 
  */
-public class SegmentException extends RuntimeException {
-    private static final long serialVersionUID = 1L;
-
-    public SegmentException(String message) {
-        super(message);
-    }
+public class ChannelSegmentFactory implements SegmentFactory {
     
-    public final static SegmentException segmentNotFound(int segId) {
-        return new SegmentException("Segment not found: " + segId);
+    @Override
+    public Segment createSegment(int segmentId, File segmentFile, int initialSizeMB, Segment.Mode mode) throws IOException {
+        return new ChannelSegment(segmentId, segmentFile, initialSizeMB, mode);
     }
 }

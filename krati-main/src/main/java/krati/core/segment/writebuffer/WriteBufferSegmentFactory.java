@@ -14,12 +14,16 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.writebuffer;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.ConcurrentLinkedQueue;
+
+import krati.core.segment.Segment;
+import krati.core.segment.SegmentFactory;
+import krati.core.segment.Segment.Mode;
 
 /**
  * WriteBufferSegmentFactory

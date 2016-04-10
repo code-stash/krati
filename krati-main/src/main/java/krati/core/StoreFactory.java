@@ -726,9 +726,9 @@ public class StoreFactory {
      * @param homeDir                - the store home directory
      * @param initialCapacity        - the initial capacity which should not be changed after the store is created
      * @param indexSegmentFileSizeMB - the index segment size in MB with a recommended range from 8 to 32
-     * @param indexSegmentFactory    - the index segment factory, {@link krati.core.segment.MemorySegmentFactory MemorySegmentFactory} recommended
+     * @param indexSegmentFactory    - the index segment factory, {@link krati.core.segment.memory.MemorySegmentFactory MemorySegmentFactory} recommended
      * @param storeSegmentFileSizeMB - the store segment size in MB with a recommended range from 8 to 256
-     * @param storeSegmentFactory    - the store segment factory, {@link krati.core.segment.WriteBufferSegmentFactory WriteBufferSegmentFactory} recommended
+     * @param storeSegmentFactory    - the store segment factory, {@link krati.core.segment.writebuffer.WriteBufferSegmentFactory WriteBufferSegmentFactory} recommended
      * @return A dynamic DataStore with growing capacity as needed.
      * @throws Exception if the store cannot be created.
      */
@@ -776,9 +776,9 @@ public class StoreFactory {
      * @param batchSize              - the number of updates per update batch
      * @param numSyncBatches         - the number of update batches required for updating the underlying indexes
      * @param indexSegmentFileSizeMB - the index segment size in MB with a recommended range from 8 to 32
-     * @param indexSegmentFactory    - the index segment factory, {@link krati.core.segment.MemorySegmentFactory MemorySegmentFactory} recommended
+     * @param indexSegmentFactory    - the index segment factory, {@link krati.core.segment.memory.MemorySegmentFactory MemorySegmentFactory} recommended
      * @param storeSegmentFileSizeMB - the store segment size in MB with a recommended range from 8 to 256
-     * @param storeSegmentFactory    - the store segment factory, {@link krati.core.segment.WriteBufferSegmentFactory WriteBufferSegmentFactory} recommended
+     * @param storeSegmentFactory    - the store segment factory, {@link krati.core.segment.writebuffer.WriteBufferSegmentFactory WriteBufferSegmentFactory} recommended
      * @return A dynamic DataStore with growing capacity as needed.
      * @throws Exception if the store cannot be created.
      */

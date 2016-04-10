@@ -59,7 +59,7 @@ public abstract class AbstractTestAvroStoreJoiner<K> extends TestCase {
     protected abstract Serializer<K> createKeySerializer();
     
     protected SegmentFactory createSegmentFactory() {
-        return new krati.core.segment.WriteBufferSegmentFactory();
+        return new krati.core.segment.writebuffer.WriteBufferSegmentFactory();
     }
     
     protected AvroStore<K> createAvroStore(File storeDir, int capacity, Schema schema, Serializer<K> keySerializer) throws Exception {

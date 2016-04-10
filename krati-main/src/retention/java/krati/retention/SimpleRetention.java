@@ -35,7 +35,7 @@ import org.apache.log4j.Logger;
 
 import krati.core.StoreConfig;
 import krati.core.segment.SegmentFactory;
-import krati.core.segment.WriteBufferSegmentFactory;
+import krati.core.segment.writebuffer.WriteBufferSegmentFactory;
 import krati.retention.clock.Clock;
 import krati.retention.clock.Occurred;
 import krati.retention.policy.RetentionPolicy;

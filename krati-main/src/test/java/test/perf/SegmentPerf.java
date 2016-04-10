@@ -21,10 +21,10 @@ import java.util.Random;
 import java.util.Set;
 import java.util.HashSet;
 
-import krati.core.segment.MappedSegmentFactory;
 import krati.core.segment.Segment;
 import krati.core.segment.SegmentFactory;
 import krati.core.segment.SegmentManager;
+import krati.core.segment.mapped.MappedSegmentFactory;
 
 public class SegmentPerf {
     static Random random = new Random(System.currentTimeMillis());

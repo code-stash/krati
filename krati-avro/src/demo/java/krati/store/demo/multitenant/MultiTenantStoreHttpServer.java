@@ -19,7 +19,7 @@ package krati.store.demo.multitenant;
 import java.io.File;
 
 import krati.core.StoreConfig;
-import krati.core.segment.MappedSegmentFactory;
+import krati.core.segment.mapped.MappedSegmentFactory;
 import krati.store.avro.protocol.BasicDataStoreResponderFactory;
 import krati.store.avro.protocol.MultiTenantStoreResponder;
 import krati.store.factory.DataStoreFactory;

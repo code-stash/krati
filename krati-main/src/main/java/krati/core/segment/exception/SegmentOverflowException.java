@@ -14,7 +14,9 @@
  * the License.
  */
 
-package krati.core.segment;
+package krati.core.segment.exception;
+
+import krati.core.segment.Segment;
 
 /**
  * SegmentOverflowException
