@@ -20,8 +20,8 @@ import java.nio.ByteOrder;
 
 import krati.io.Serializer;
 import krati.io.serializer.IntSerializer;
-import krati.store.ArrayStore;
-import krati.store.SerializableObjectArray;
+import krati.store.arraystore.ArrayStore;
+import krati.store.objectstore.SerializableObjectArray;
 
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;

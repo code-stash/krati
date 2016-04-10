@@ -37,7 +37,7 @@ import krati.retention.SimpleRetention;
 import krati.retention.clock.ClockSerializer;
 import krati.retention.clock.SourceWaterMarksClock;
 import krati.retention.clock.WaterMarksClock;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 import krati.store.avro.AvroStore;
 import krati.store.avro.AvroStoreJoiner;
 import krati.store.avro.SimpleAvroArray;

@@ -23,7 +23,7 @@ import java.util.UUID;
 import java.util.Map.Entry;
 
 import junit.framework.TestCase;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import krati.util.IndexedIterator;
 import test.util.FileUtils;
 import test.util.RandomBytes;

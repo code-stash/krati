@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
 
 import krati.retention.clock.Clock;
 import krati.retention.clock.WaterMarksClock;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * SimpleRetentionStoreWriter

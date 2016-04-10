@@ -29,7 +29,7 @@ import krati.core.StoreFactory;
 import krati.core.segment.SegmentFactory;
 import krati.io.Serializer;
 import krati.io.serializer.StringSerializerUtf8;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * TestSystemExit

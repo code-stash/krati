@@ -25,8 +25,8 @@ import junit.framework.TestCase;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.io.serializer.StringSerializerUtf8;
-import krati.store.ArrayStore;
-import krati.store.SerializableObjectArray;
+import krati.store.arraystore.ArrayStore;
+import krati.store.objectstore.SerializableObjectArray;
 import krati.util.IndexedIterator;
 
 /**

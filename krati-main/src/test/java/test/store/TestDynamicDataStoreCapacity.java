@@ -24,7 +24,7 @@ import junit.framework.TestCase;
 import krati.core.StoreConfig;
 import krati.core.array.basic.DynamicConstants;
 import krati.core.segment.channel.ChannelSegmentFactory;
-import krati.store.DynamicDataStore;
+import krati.store.datastore.DynamicDataStore;
 import test.util.DirUtils;
 
 /**

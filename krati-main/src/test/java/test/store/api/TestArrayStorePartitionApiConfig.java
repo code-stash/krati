@@ -21,7 +21,7 @@ import java.io.File;
 import krati.core.StoreFactory;
 import krati.core.StorePartitionConfig;
 import krati.core.segment.Segment;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 import test.util.RandomBytes;
 
 /**

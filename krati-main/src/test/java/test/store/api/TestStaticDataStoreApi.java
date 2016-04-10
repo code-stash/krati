@@ -19,8 +19,8 @@ package test.store.api;
 import java.io.File;
 
 import krati.core.segment.mapped.MappedSegmentFactory;
-import krati.store.DataStore;
-import krati.store.StaticDataStore;
+import krati.store.datastore.DataStore;
+import krati.store.datastore.StaticDataStore;
 
 /**
  * TestStaticDataStoreApi

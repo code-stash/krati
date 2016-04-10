@@ -14,32 +14,24 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.arraystore;
 
 /**
- * ObjectStore
+ * ArrayStorePartition - Partitioned array for storing bytes (e.g., member information) at specified indexes (i.e. member ID).
  * 
  * @author jwu
- *
- * @param <K> Key
- * @param <V> Value
+ * 01/10, 2011
+ * 
  */
-public interface ObjectStore<K, V> extends DataStore<K, V> {
+public interface ArrayStorePartition extends ArrayStore {
     
     /**
-     * Gets an object in the form of byte array from the store.
-     * 
-     * @param key  the retrieving key. 
-     * @return the retrieved object in raw bytes.
+     * @return the number of Id(s) of this partition.
      */
-    public byte[] getBytes(K key);
+    public int getIdCount();
     
     /**
-     * Gets an object in the form of byte array from the store.
-     * 
-     * @param keyBytes  the retrieving key in raw bytes. 
-     * @return the retrieved object in raw bytes.
+     * @return the start Id of this partition.
      */
-    public byte[] getBytes(byte[] keyBytes);
-    
+    public int getIdStart();
 }

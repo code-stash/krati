@@ -43,7 +43,7 @@ import krati.io.Closeable;
 /**
  * SimpleDataArray provides an array like interface to <code>get</code> and <code>set</code>
  * raw bytes at a specified array index. This class provides the core code for implementing
- * different sub-classes of {@link krati.store.DataStore DataStore} and {@link krati.store.DataSet DataSet}.
+ * different sub-classes of {@link krati.store.datastore.DataStore DataStore} and {@link krati.store.DataSet DataSet}.
  * 
  * <p>
  * This class is not thread-safe by design. It is expected that the conditions below hold within one JVM.

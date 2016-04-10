@@ -27,7 +27,7 @@ import krati.core.StoreConfig;
 import krati.core.StoreParams;
 import krati.core.segment.SegmentFactory;
 import krati.core.segment.memory.MemorySegmentFactory;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import krati.store.index.HashIndex;
 import krati.store.index.Index;
 import krati.util.IndexedIterator;

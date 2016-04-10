@@ -21,9 +21,9 @@ import java.io.IOException;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.io.Serializer;
-import krati.store.ArrayStore;
-import krati.store.ObjectStore;
-import krati.store.SerializableObjectArray;
+import krati.store.arraystore.ArrayStore;
+import krati.store.objectstore.ObjectStore;
+import krati.store.objectstore.SerializableObjectArray;
 
 /**
  * DynamicObjectArrayFactory
@@ -35,7 +35,7 @@ public class DynamicObjectArrayFactory<V> implements ObjectStoreFactory<Integer,
     
     /**
      * Create an instance of {@link ObjectStore} for mapping keys to values.
-     * The underlying store is backed by {@link krati.store.DynamicDataArray DynamicDataArray} to have better
+     * The underlying store is backed by {@link krati.store.arraystore.DynamicDataArray DynamicDataArray} to have better
      * performance where keys are integer.
      * 
      * @param config          - the configuration

@@ -16,7 +16,7 @@
 
 package test.store.handler;
 
-import krati.store.DataStoreHandler;
+import krati.store.datastore.DataStoreHandler;
 import krati.store.index.HashIndexDataHandler;
 
 /**

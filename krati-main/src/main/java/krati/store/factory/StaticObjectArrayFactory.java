@@ -22,9 +22,9 @@ import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.StorePartitionConfig;
 import krati.io.Serializer;
-import krati.store.ArrayStore;
-import krati.store.ObjectStore;
-import krati.store.SerializableObjectArray;
+import krati.store.arraystore.ArrayStore;
+import krati.store.objectstore.ObjectStore;
+import krati.store.objectstore.SerializableObjectArray;
 
 /**
  * StaticObjectArrayFactory
@@ -36,7 +36,7 @@ public class StaticObjectArrayFactory<V> implements ObjectStoreFactory<Integer, 
     
     /**
      * Create an instance of {@link ObjectStore} for mapping keys to values.
-     * The underlying store is backed by {@link krati.store.StaticDataArray StaticDataArray} to have better
+     * The underlying store is backed by {@link krati.store.arraystore.StaticDataArray StaticDataArray} to have better
      * performance where keys are integer.
      * 
      * @param config          - the configuration

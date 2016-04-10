@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.datastore;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +34,8 @@ import krati.core.array.SimpleDataArray;
 import krati.core.array.basic.DynamicConstants;
 import krati.core.segment.SegmentFactory;
 import krati.core.segment.SegmentManager;
-import krati.store.DataStore;
-import krati.store.DataStoreHandler;
+import krati.store.DefaultDataStoreHandler;
+import krati.store.StoreClosedException;
 import krati.util.FnvHashFunction;
 import krati.util.HashFunction;
 import krati.util.IndexedIterator;

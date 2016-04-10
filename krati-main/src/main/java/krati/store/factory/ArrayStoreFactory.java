@@ -19,7 +19,7 @@ package krati.store.factory;
 import java.io.IOException;
 
 import krati.core.StoreConfig;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 
 /**
  * ArrayStoreFactory defines the interface for creating a {@link ArrayStore} based on a store configuration.

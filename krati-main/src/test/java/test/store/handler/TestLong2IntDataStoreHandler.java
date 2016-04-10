@@ -18,7 +18,7 @@ package test.store.handler;
 
 import krati.io.serializer.IntSerializer;
 import krati.io.serializer.LongSerializer;
-import krati.store.DataStoreHandler;
+import krati.store.datastore.DataStoreHandler;
 import krati.store.handler.Long2IntDataStoreHandler;
 
 /**

@@ -21,7 +21,7 @@ import java.io.File;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.StoreParams;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import krati.store.index.HashIndexDataHandler;
 import test.StatsLog;
 

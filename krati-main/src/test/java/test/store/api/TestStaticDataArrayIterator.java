@@ -20,7 +20,7 @@ import java.io.File;
 
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 
 /**
  * TestStaticDataArrayIterator

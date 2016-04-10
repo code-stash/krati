@@ -20,11 +20,11 @@ import java.io.IOException;
 
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 
 /**
  * DynamicArrayStoreFactory creates a dynamic array store using 
- * {@link krati.store.DynamicDataArray DynamicDataArray}.
+ * {@link krati.store.arraystore.DynamicDataArray DynamicDataArray}.
  * 
  * @author jwu
  * @since 12/06, 2011
@@ -35,7 +35,7 @@ public class DynamicArrayStoreFactory implements ArrayStoreFactory {
      * Creates a {@link ArrayStore} based on the specified store configuration.
      * 
      * @param config - the store configuration
-     * @return the newly created array store in the form of {@link krati.store.DynamicDataArray DynamicDataArray}.
+     * @return the newly created array store in the form of {@link krati.store.arraystore.DynamicDataArray DynamicDataArray}.
      * @throws IOException if the store cannot be created.
      */
     @Override

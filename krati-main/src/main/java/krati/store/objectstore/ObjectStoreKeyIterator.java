@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.objectstore;
 
 import krati.io.Serializer;
 import krati.util.IndexedIterator;

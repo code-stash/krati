@@ -23,10 +23,10 @@ import test.util.DirUtils;
 import test.util.Utility;
 
 import junit.framework.TestCase;
-import krati.store.DataStore;
 import krati.store.avro.client.StoreClient;
 import krati.store.avro.protocol.BasicDataStoreResponder;
 import krati.store.avro.protocol.StoreResponder;
+import krati.store.datastore.DataStore;
 
 /**
  * AbstractTestStoreClient

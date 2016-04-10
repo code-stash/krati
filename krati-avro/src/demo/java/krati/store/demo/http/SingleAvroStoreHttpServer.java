@@ -23,10 +23,10 @@ import java.util.List;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.segment.memory.MemorySegmentFactory;
-import krati.store.DataStore;
 import krati.store.avro.protocol.BasicDataStoreResponder;
 import krati.store.avro.protocol.StoreKeys;
 import krati.store.avro.protocol.StoreResponder;
+import krati.store.datastore.DataStore;
 
 import org.apache.avro.Schema;
 import org.apache.avro.Schema.Field;

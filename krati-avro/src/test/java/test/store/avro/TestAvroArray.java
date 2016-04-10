@@ -26,8 +26,8 @@ import junit.framework.TestCase;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.segment.SegmentFactory;
-import krati.store.ArrayStore;
 import krati.store.avro.SimpleAvroArray;
+import krati.store.arraystore.ArrayStore;
 import krati.store.avro.AvroStore;
 
 import org.apache.avro.Schema;

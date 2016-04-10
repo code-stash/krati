@@ -20,9 +20,8 @@ import java.io.File;
 import java.io.IOException;
 
 import krati.core.segment.SegmentFactory;
-import krati.store.ArrayStorePartition;
-import krati.store.StaticArrayStorePartition;
-
+import krati.store.arraystore.ArrayStorePartition;
+import krati.store.arraystore.StaticArrayStorePartition;
 import test.AbstractTest;
 import test.StatsLog;
 import test.util.DataPartitionChecker;

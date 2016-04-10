@@ -16,7 +16,7 @@
 
 package krati.store.avro.protocol;
 
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * BasicDataStoreResponder
@@ -31,7 +31,7 @@ public class BasicDataStoreResponder extends StoreResponder {
     }
     
     /**
-     * @return the underlying {@link krati.store.DataStore}.
+     * @return the underlying {@link krati.store.datastore.DataStore}.
      */
     public DataStore<byte[], byte[]> getStore() {
         return ((BasicDataStoreProtocolHandler)getHandler()).getStore();

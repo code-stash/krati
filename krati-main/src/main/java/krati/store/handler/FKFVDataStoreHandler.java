@@ -23,14 +23,14 @@ import java.util.List;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map.Entry;
 
-import krati.store.DataStoreHandler;
+import krati.store.datastore.DataStoreHandler;
 import krati.util.Bytes;
 import krati.util.Conditions;
 
 import org.apache.log4j.Logger;
 
 /**
- * FKFVDataStoreHandler - The fixed-length key and fixed-length value {@link krati.store.DataStoreHandler DataStoreHandler}.
+ * FKFVDataStoreHandler - The fixed-length key and fixed-length value {@link krati.store.datastore.DataStoreHandler DataStoreHandler}.
  * 
  * @author jwu
  * @since 08/18, 2012

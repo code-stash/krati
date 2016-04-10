@@ -14,12 +14,13 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.objectstore;
 
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map.Entry;
 
 import krati.io.Serializer;
+import krati.store.arraystore.ArrayStore;
 import krati.util.IndexedIterator;
 
 /**

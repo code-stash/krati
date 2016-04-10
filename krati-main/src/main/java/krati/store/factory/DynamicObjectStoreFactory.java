@@ -21,9 +21,9 @@ import java.io.IOException;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.io.Serializer;
-import krati.store.DataStore;
-import krati.store.ObjectStore;
-import krati.store.SerializableObjectStore;
+import krati.store.datastore.DataStore;
+import krati.store.objectstore.ObjectStore;
+import krati.store.objectstore.SerializableObjectStore;
 
 /**
  * DynamicObjectStoreFactory
@@ -36,7 +36,7 @@ public class DynamicObjectStoreFactory<K, V> implements ObjectStoreFactory<K, V>
 
     /**
      * Create an instance of {@link ObjectStore} for mapping keys to values.
-     * The underlying store is backed by {@link krati.store.DynamicDataStore DynamicDataStore}.
+     * The underlying store is backed by {@link krati.store.datastore.DynamicDataStore DynamicDataStore}.
      * 
      * @param config          - the configuration
      * @param keySerializer   - the serializer for keys

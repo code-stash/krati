@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.objectstore;
 
 import java.util.AbstractMap;
 import java.util.Map.Entry;

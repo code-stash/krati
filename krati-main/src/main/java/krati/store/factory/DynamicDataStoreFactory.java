@@ -20,7 +20,7 @@ import java.io.IOException;
 
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.store.DynamicDataStore;
+import krati.store.datastore.DynamicDataStore;
 
 /**
  * DynamicDataStoreFactory creates a {@link DynamicDataStore} with keys and values

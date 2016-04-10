@@ -19,8 +19,8 @@ package test.core;
 import java.io.File;
 
 import krati.core.segment.SegmentFactory;
-import krati.store.AbstractDataArray;
-import krati.store.StaticDataArray;
+import krati.store.arraystore.AbstractDataArray;
+import krati.store.arraystore.StaticDataArray;
 
 /**
  * TestStaticDataArrayMapped

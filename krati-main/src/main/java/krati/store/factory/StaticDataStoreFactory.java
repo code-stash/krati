@@ -20,7 +20,7 @@ import java.io.IOException;
 
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.store.StaticDataStore;
+import krati.store.datastore.StaticDataStore;
 
 /**
  * StaticDataStoreFactory creates a {@link StaticDataStore} with keys and values

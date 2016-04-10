@@ -22,7 +22,7 @@ import test.StatsLog;
 
 import krati.core.StoreFactory;
 import krati.core.segment.SegmentFactory;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * TestDynamicStore using MemorySegment.

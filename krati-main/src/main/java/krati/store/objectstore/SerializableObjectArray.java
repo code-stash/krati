@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.objectstore;
 
 import java.io.IOException;
 import java.nio.ByteOrder;
@@ -22,6 +22,9 @@ import java.util.Map.Entry;
 
 import krati.io.Serializer;
 import krati.io.serializer.IntSerializer;
+import krati.store.StoreClosedException;
+import krati.store.arraystore.ArrayStore;
+import krati.store.arraystore.ArrayStoreIndexIterator;
 import krati.util.IndexedIterator;
 
 /**

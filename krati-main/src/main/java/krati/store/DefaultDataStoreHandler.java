@@ -25,7 +25,7 @@ import java.util.AbstractMap.SimpleEntry;
 
 import org.apache.log4j.Logger;
 
-import krati.store.DataStoreHandler;
+import krati.store.datastore.DataStoreHandler;
 import krati.util.Bytes;
 
 /**

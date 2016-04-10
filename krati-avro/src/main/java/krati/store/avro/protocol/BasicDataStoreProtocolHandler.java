@@ -16,7 +16,7 @@
 
 package krati.store.avro.protocol;
 
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * BasicDataStoreProtocolHandler defines the interface between an {@link DataStore} with keys and values in the
@@ -38,7 +38,7 @@ public class BasicDataStoreProtocolHandler implements StoreProtocolHandler {
     }
     
     /**
-     * @return the underlying {@link krati.store.DataStore}.
+     * @return the underlying {@link krati.store.datastore.DataStore}.
      */
     public final DataStore<byte[], byte[]> getStore() {
         return _store;

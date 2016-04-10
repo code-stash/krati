@@ -14,12 +14,14 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.objectstore;
 
 import java.io.IOException;
 import java.util.Map.Entry;
 
 import krati.io.Serializer;
+import krati.store.StoreClosedException;
+import krati.store.datastore.DataStore;
 import krati.util.IndexedIterator;
 
 /**

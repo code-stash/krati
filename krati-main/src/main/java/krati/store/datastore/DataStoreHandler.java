@@ -14,10 +14,12 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.datastore;
 
 import java.util.List;
 import java.util.Map.Entry;
+
+import krati.store.DataHandler;
 
 /**
  * DataStoreHandler

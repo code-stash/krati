@@ -22,7 +22,7 @@ import java.util.Map.Entry;
 import org.apache.log4j.Logger;
 
 import krati.core.StoreConfig;
-import krati.store.DynamicDataStore;
+import krati.store.datastore.DynamicDataStore;
 import krati.util.IndexedIterator;
 
 /**

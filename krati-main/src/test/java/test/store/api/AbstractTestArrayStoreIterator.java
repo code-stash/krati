@@ -24,9 +24,9 @@ import test.util.FileUtils;
 import test.util.RandomBytes;
 
 import junit.framework.TestCase;
-import krati.store.ArrayStore;
-import krati.store.ArrayStoreIndexIterator;
-import krati.store.ArrayStoreIterator;
+import krati.store.arraystore.ArrayStore;
+import krati.store.arraystore.ArrayStoreIndexIterator;
+import krati.store.arraystore.ArrayStoreIterator;
 
 /**
  * AbstractTestArrayStoreIterator

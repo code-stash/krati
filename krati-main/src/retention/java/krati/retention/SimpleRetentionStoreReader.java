@@ -21,7 +21,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import krati.retention.clock.Clock;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import krati.util.IndexedIterator;
 
 /**

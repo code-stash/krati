@@ -18,7 +18,7 @@ package test.util;
 
 import java.util.List;
 
-import krati.store.ArrayStorePartition;
+import krati.store.arraystore.ArrayStorePartition;
 
 /**
  * DataPartitionChecker

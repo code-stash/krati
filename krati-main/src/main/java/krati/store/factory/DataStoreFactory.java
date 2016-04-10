@@ -19,7 +19,7 @@ package krati.store.factory;
 import java.io.IOException;
 
 import krati.core.StoreConfig;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * DataStoreFactory defines the interface for creating a {@link DataStore} with

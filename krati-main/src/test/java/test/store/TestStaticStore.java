@@ -21,8 +21,8 @@ import java.io.File;
 import test.StatsLog;
 
 import krati.core.segment.SegmentFactory;
-import krati.store.DataStore;
-import krati.store.StaticDataStore;
+import krati.store.datastore.DataStore;
+import krati.store.datastore.StaticDataStore;
 
 /**
  * TestSimpleStore using MemorySegment.

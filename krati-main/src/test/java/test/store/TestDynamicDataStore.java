@@ -22,8 +22,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 import krati.core.segment.SegmentFactory;
-import krati.store.DataStore;
-import krati.store.DynamicDataStore;
+import krati.store.datastore.DataStore;
+import krati.store.datastore.DynamicDataStore;
 import test.AbstractTest;
 import test.StatsLog;
 import test.util.HashFunctionInteger;

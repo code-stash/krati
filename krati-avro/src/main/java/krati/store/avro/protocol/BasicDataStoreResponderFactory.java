@@ -17,7 +17,7 @@
 package krati.store.avro.protocol;
 
 import krati.core.StoreConfig;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import krati.store.factory.DataStoreFactory;
 
 /**

@@ -28,8 +28,8 @@ import krati.core.segment.SegmentFactory;
 import krati.io.Serializer;
 import krati.retention.clock.Clock;
 import krati.retention.policy.RetentionPolicy;
-import krati.store.ObjectStore;
 import krati.store.factory.ObjectStoreFactory;
+import krati.store.objectstore.ObjectStore;
 import krati.util.IndexedIterator;
 
 /**

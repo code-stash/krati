@@ -28,9 +28,9 @@ import java.util.Map.Entry;
 
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
-import krati.store.DataStoreHandler;
 import krati.store.DefaultDataStoreHandler;
-import krati.store.DynamicDataStore;
+import krati.store.datastore.DataStoreHandler;
+import krati.store.datastore.DynamicDataStore;
 import test.util.FileUtils;
 
 /**

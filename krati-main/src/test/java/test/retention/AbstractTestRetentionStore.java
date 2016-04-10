@@ -32,7 +32,7 @@ import krati.retention.clock.ClockSerializer;
 import krati.retention.clock.SourceWaterMarksClock;
 import krati.retention.policy.RetentionPolicy;
 import krati.retention.policy.RetentionPolicyOnSize;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import krati.util.SourceWaterMarks;
 
 /**

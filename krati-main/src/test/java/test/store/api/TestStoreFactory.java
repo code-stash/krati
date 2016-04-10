@@ -33,9 +33,9 @@ import krati.core.StorePartitionConfig;
 import krati.core.array.basic.DynamicConstants;
 import krati.core.segment.SegmentFactory;
 import krati.core.segment.mapped.MappedSegmentFactory;
-import krati.store.ArrayStore;
-import krati.store.ArrayStorePartition;
-import krati.store.DataStore;
+import krati.store.arraystore.ArrayStore;
+import krati.store.arraystore.ArrayStorePartition;
+import krati.store.datastore.DataStore;
 
 /**
  * TestStoreFactory

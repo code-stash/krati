@@ -25,7 +25,7 @@ import krati.io.serializer.StringSerializerUtf8;
 import krati.retention.Retention;
 import krati.retention.RetentionConfig;
 import krati.retention.SimpleRetention;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import krati.store.factory.DynamicObjectStoreFactory;
 import krati.store.factory.ObjectStoreFactory;
 

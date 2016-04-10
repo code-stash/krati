@@ -16,8 +16,8 @@
 
 package test.store.handler;
 
-import krati.store.DataStoreHandler;
 import krati.store.DefaultDataStoreHandler;
+import krati.store.datastore.DataStoreHandler;
 
 /**
  * TestDefaultDataStoreHandler

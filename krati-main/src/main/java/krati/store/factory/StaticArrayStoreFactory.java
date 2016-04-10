@@ -21,12 +21,12 @@ import java.io.IOException;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.StorePartitionConfig;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 
 /**
  * StaticArrayStoreFactory creates a static array store using 
- * {@link krati.store.StaticDataArray StaticDataArray} or
- * {@link krati.store.StaticArrayStorePartition StaticArrayStorePartition}
+ * {@link krati.store.arraystore.StaticDataArray StaticDataArray} or
+ * {@link krati.store.arraystore.StaticArrayStorePartition StaticArrayStorePartition}
  * 
  * @author jwu
  * @since 12/06, 2011
@@ -38,8 +38,8 @@ public class StaticArrayStoreFactory implements ArrayStoreFactory {
      * 
      * @param config - the store configuration
      * @return the newly created array store in the form of
-     *         {@link krati.store.StaticDataArray StaticDataArray} or
-     *         {@link krati.store.StaticArrayStorePartition StaticArrayStorePartition}
+     *         {@link krati.store.arraystore.StaticDataArray StaticDataArray} or
+     *         {@link krati.store.arraystore.StaticArrayStorePartition StaticArrayStorePartition}
      *         depending on {@link StoreConfig} or {@link StorePartitionConfig}.
      * @throws IOException if the store cannot be created.
      */

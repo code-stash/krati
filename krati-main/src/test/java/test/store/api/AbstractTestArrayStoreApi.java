@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 import junit.framework.TestCase;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 import test.util.FileUtils;
 import test.util.RandomBytes;
 

@@ -17,7 +17,7 @@
 package krati.store.avro;
 
 import krati.io.Serializer;
-import krati.store.ObjectStore;
+import krati.store.objectstore.ObjectStore;
 
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;

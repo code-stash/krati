@@ -20,7 +20,7 @@ import java.io.IOException;
 
 import krati.core.StoreConfig;
 import krati.io.Serializer;
-import krati.store.ObjectStore;
+import krati.store.objectstore.ObjectStore;
 
 /**
  * ObjectStoreFactory defines the interface for creating a {@link ObjectStore}.

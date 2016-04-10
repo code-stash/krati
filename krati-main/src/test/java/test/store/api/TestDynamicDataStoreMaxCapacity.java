@@ -25,7 +25,7 @@ import junit.framework.TestCase;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.array.basic.DynamicConstants;
-import krati.store.DynamicDataStore;
+import krati.store.datastore.DynamicDataStore;
 import krati.util.LinearHashing;
 
 /**

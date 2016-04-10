@@ -33,7 +33,7 @@ public class StorePartitionConfig extends StoreConfig {
     
     /**
      * Creates a range-based partition configuration for instantiating
-     * {@link krati.store.ArrayStorePartition ArrayStorePartition}.
+     * {@link krati.store.arraystore.ArrayStorePartition ArrayStorePartition}.
      *  
      * @param homeDir        - the store home directory
      * @param partitionStart - the store partition start

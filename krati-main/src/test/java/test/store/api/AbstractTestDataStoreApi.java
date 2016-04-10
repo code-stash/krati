@@ -28,7 +28,7 @@ import test.util.FileUtils;
 import test.util.RandomBytes;
 
 import junit.framework.TestCase;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * TestDataStoreApi

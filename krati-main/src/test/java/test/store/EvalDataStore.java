@@ -19,7 +19,7 @@ package test.store;
 import java.io.File;
 import java.util.Iterator;
 
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import test.AbstractTest;
 import test.StatsLog;
 import test.driver.StoreReader;

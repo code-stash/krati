@@ -14,24 +14,37 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.arraystore;
+
+import krati.Persistable;
+import krati.array.DataArray;
+import krati.io.Closeable;
 
 /**
- * ArrayStorePartition - Partitioned array for storing bytes (e.g., member information) at specified indexes (i.e. member ID).
+ * ArrayStore
  * 
  * @author jwu
  * 01/10, 2011
- * 
+ *
  */
-public interface ArrayStorePartition extends ArrayStore {
+public interface ArrayStore extends Persistable, Closeable, DataArray {
     
     /**
-     * @return the number of Id(s) of this partition.
+     * @return the capacity of this ArrayStore.
      */
-    public int getIdCount();
+    public int capacity();
     
     /**
-     * @return the start Id of this partition.
+     * @return the index start of this ArrayStore.
      */
-    public int getIdStart();
+    public int getIndexStart();
+    
+    /**
+     * Deletes data at an index;
+     * 
+     * @param index       - Index where data is to be removed.
+     * @param scn         - System change number.
+     * @throws Exception
+     */
+    public void delete(int index, long scn) throws Exception;
 }

@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.datastore;
 
 import java.io.IOException;
 import java.util.Map.Entry;

@@ -22,8 +22,8 @@ import java.util.Arrays;
 import test.util.RandomBytes;
 import krati.core.segment.Segment;
 import krati.core.segment.mapped.MappedSegmentFactory;
-import krati.store.ArrayStore;
-import krati.store.DynamicDataArray;
+import krati.store.arraystore.ArrayStore;
+import krati.store.arraystore.DynamicDataArray;
 
 /**
  * TestDynamicDataArrayApi

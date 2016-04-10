@@ -20,8 +20,8 @@ import java.io.File;
 
 import krati.core.array.basic.DynamicConstants;
 import krati.core.segment.SegmentFactory;
-import krati.store.AbstractDataArray;
-import krati.store.DynamicDataArray;
+import krati.store.arraystore.AbstractDataArray;
+import krati.store.arraystore.DynamicDataArray;
 
 /**
  * TestDynamicDataArrayMapped

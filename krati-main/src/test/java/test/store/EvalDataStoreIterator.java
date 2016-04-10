@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 import krati.core.segment.SegmentFactory;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 import test.AbstractTest;
 import test.StatsLog;
 

@@ -14,24 +14,21 @@
  * the License.
  */
 
-package krati.store;
-
-import java.util.Map.Entry;
-import java.util.AbstractMap.SimpleEntry;
+package krati.store.arraystore;
 
 import krati.util.IndexedIterator;
 
 /**
- * ArrayStoreIterator
+ * ArrayStoreIndexIterator
  * 
  * @author jwu
  * @since 10/08, 2011
  */
-public class ArrayStoreIterator implements IndexedIterator<Entry<Integer, byte[]>> {
+public class ArrayStoreIndexIterator implements IndexedIterator<Integer> {
     private final ArrayStore _store;
     private int _index;
     
-    public ArrayStoreIterator(ArrayStore store) {
+    public ArrayStoreIndexIterator(ArrayStore store) {
         this._store = store;
         this._index = store.getIndexStart();
     }
@@ -57,8 +54,8 @@ public class ArrayStoreIterator implements IndexedIterator<Entry<Integer, byte[]
     }
     
     @Override
-    public Entry<Integer, byte[]> next() {
-        Entry<Integer, byte[]> ret = new SimpleEntry<Integer, byte[]>(_index, _store.get(_index));
+    public Integer next() {
+        int ret = _index;
         _index++;
         return ret;
     }

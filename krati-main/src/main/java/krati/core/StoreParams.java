@@ -351,7 +351,7 @@ public class StoreParams {
     public static final String PARAM_DATA_HANDLER_CLASS     = "krati.store.data.handler.class";
     
     /**
-     * Gets the initial level of {@link krati.store.DynamicDataStore DynamicDataStore}, {@link krati.store.DynamicDataSet DynamicDataSet}
+     * Gets the initial level of {@link krati.store.datastore.DynamicDataStore DynamicDataStore}, {@link krati.store.DynamicDataSet DynamicDataSet}
      * and {@link krati.store.IndexedDataStore IndexedDataStore} based on the initial store capacity.
      * The returned initial <code>level</code> is the minimum integer which satisfies the condition
      * <code>initialCapacity</code> less than or equal to <code>2 ^ (16 + level)</code>.
@@ -371,7 +371,7 @@ public class StoreParams {
     }
     
     /**
-     * Gets the initial capacity of {@link krati.store.DynamicDataStore DynamicDataStore}, {@link krati.store.DynamicDataSet DynamicDataSet}
+     * Gets the initial capacity of {@link krati.store.datastore.DynamicDataStore DynamicDataStore}, {@link krati.store.DynamicDataSet DynamicDataSet}
      * and {@link krati.store.IndexedDataStore IndexedDataStore} based on the <code>initialLevel</code> of store.
      * The <code>initialLevel</code> determines that the <code>initialCapacity</code> should be
      * equal to <code>2 ^ (16 + level)</code> and less than <code>Integer.MAX_VALUE</code>.

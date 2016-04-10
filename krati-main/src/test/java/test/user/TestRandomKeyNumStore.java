@@ -31,7 +31,7 @@ import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.segment.SegmentFactory;
 import krati.core.segment.mapped.MappedSegmentFactory;
-import krati.store.DataStore;
+import krati.store.datastore.DataStore;
 
 /**
  * TestRandomKeyNumStore

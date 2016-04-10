@@ -14,7 +14,7 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.arraystore;
 
 import java.io.File;
 import java.io.IOException;

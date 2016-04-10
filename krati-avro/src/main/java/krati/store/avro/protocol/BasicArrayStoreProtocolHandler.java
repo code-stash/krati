@@ -19,7 +19,7 @@ package krati.store.avro.protocol;
 import java.nio.ByteOrder;
 
 import krati.io.serializer.IntSerializer;
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 
 /**
  * BasicArrayStoreProtocolHandler defines the interface between an {@link ArrayStore} and the transport protocol
@@ -54,7 +54,7 @@ public class BasicArrayStoreProtocolHandler implements StoreProtocolHandler {
     }
     
     /**
-     * @return the underlying {@link krati.store.ArrayStore}.
+     * @return the underlying {@link krati.store.arraystore.ArrayStore}.
      */
     public final ArrayStore getStore() {
         return _store;

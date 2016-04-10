@@ -36,9 +36,9 @@ import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.core.segment.SegmentFactory;
 import krati.io.serializer.StringSerializer;
-import krati.store.DataStore;
 import krati.store.avro.AvroStore;
 import krati.store.avro.SimpleAvroStore;
+import krati.store.datastore.DataStore;
 
 /**
  * TestAvroStore

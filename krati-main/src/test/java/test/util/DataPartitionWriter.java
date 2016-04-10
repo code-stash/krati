@@ -19,7 +19,7 @@ package test.util;
 import java.util.List;
 import java.util.Random;
 
-import krati.store.ArrayStorePartition;
+import krati.store.arraystore.ArrayStorePartition;
 import test.LatencyStats;
 
 /**

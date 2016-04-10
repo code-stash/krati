@@ -21,9 +21,9 @@ import java.io.IOException;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
 import krati.io.Serializer;
-import krati.store.DataStore;
-import krati.store.ObjectStore;
-import krati.store.SerializableObjectStore;
+import krati.store.datastore.DataStore;
+import krati.store.objectstore.ObjectStore;
+import krati.store.objectstore.SerializableObjectStore;
 
 /**
  * IndexedObjectStoreFactory

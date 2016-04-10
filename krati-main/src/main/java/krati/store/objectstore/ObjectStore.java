@@ -14,37 +14,34 @@
  * the License.
  */
 
-package krati.store;
+package krati.store.objectstore;
 
-import krati.Persistable;
-import krati.array.DataArray;
-import krati.io.Closeable;
+import krati.store.datastore.DataStore;
 
 /**
- * ArrayStore
+ * ObjectStore
  * 
  * @author jwu
- * 01/10, 2011
  *
+ * @param <K> Key
+ * @param <V> Value
  */
-public interface ArrayStore extends Persistable, Closeable, DataArray {
+public interface ObjectStore<K, V> extends DataStore<K, V> {
     
     /**
-     * @return the capacity of this ArrayStore.
-     */
-    public int capacity();
-    
-    /**
-     * @return the index start of this ArrayStore.
-     */
-    public int getIndexStart();
-    
-    /**
-     * Deletes data at an index;
+     * Gets an object in the form of byte array from the store.
      * 
-     * @param index       - Index where data is to be removed.
-     * @param scn         - System change number.
-     * @throws Exception
+     * @param key  the retrieving key. 
+     * @return the retrieved object in raw bytes.
      */
-    public void delete(int index, long scn) throws Exception;
+    public byte[] getBytes(K key);
+    
+    /**
+     * Gets an object in the form of byte array from the store.
+     * 
+     * @param keyBytes  the retrieving key in raw bytes. 
+     * @return the retrieved object in raw bytes.
+     */
+    public byte[] getBytes(byte[] keyBytes);
+    
 }

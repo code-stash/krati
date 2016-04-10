@@ -24,8 +24,8 @@ import java.util.Map.Entry;
 
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
-import krati.store.DataStoreHandler;
-import krati.store.DynamicDataStore;
+import krati.store.datastore.DataStoreHandler;
+import krati.store.datastore.DynamicDataStore;
 import krati.store.index.HashIndexDataHandler;
 import krati.util.Bytes;
 import test.util.FileUtils;

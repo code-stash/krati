@@ -20,10 +20,9 @@ import java.io.File;
 import java.util.Iterator;
 
 import krati.core.segment.SegmentFactory;
-import krati.store.DataStore;
-import krati.store.SerializableObjectStore;
-import krati.store.StaticDataStore;
-
+import krati.store.datastore.DataStore;
+import krati.store.datastore.StaticDataStore;
+import krati.store.objectstore.SerializableObjectStore;
 import test.AbstractTest;
 
 import test.protos.KeySerializer;

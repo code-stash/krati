@@ -21,7 +21,7 @@ import java.io.IOException;
 
 import krati.array.DataArray;
 import krati.core.segment.SegmentFactory;
-import krati.store.AbstractDataArray;
+import krati.store.arraystore.AbstractDataArray;
 import test.AbstractTest;
 import test.StatsLog;
 import test.util.DataArrayChecker;

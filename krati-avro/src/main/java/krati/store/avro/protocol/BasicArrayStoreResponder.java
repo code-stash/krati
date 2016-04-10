@@ -16,7 +16,7 @@
 
 package krati.store.avro.protocol;
 
-import krati.store.ArrayStore;
+import krati.store.arraystore.ArrayStore;
 
 /**
  * BasicArrayStoreResponder
@@ -31,7 +31,7 @@ public class BasicArrayStoreResponder extends StoreResponder {
     }
     
     /**
-     * @return the underlying {@link krati.store.ArrayStore}.
+     * @return the underlying {@link krati.store.arraystore.ArrayStore}.
      */
     public ArrayStore getStore() {
         return ((BasicArrayStoreProtocolHandler)getHandler()).getStore();

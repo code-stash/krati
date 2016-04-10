@@ -23,7 +23,7 @@ import test.util.FileUtils;
 import junit.framework.TestCase;
 import krati.core.StoreConfig;
 import krati.core.StoreFactory;
-import krati.store.StaticDataStore;
+import krati.store.datastore.StaticDataStore;
 
 /**
  * TestStaticDataStoreMaxCapacity

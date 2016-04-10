@@ -19,21 +19,21 @@ package krati.core;
 import java.io.File;
 
 import krati.core.segment.SegmentFactory;
-import krati.store.ArrayStore;
-import krati.store.ArrayStorePartition;
-import krati.store.DynamicDataArray;
 import krati.store.DynamicDataSet;
-import krati.store.DynamicDataStore;
 import krati.store.IndexedDataStore;
-import krati.store.StaticArrayStorePartition;
-import krati.store.StaticDataArray;
 import krati.store.StaticDataSet;
-import krati.store.StaticDataStore;
+import krati.store.arraystore.ArrayStore;
+import krati.store.arraystore.ArrayStorePartition;
+import krati.store.arraystore.DynamicDataArray;
+import krati.store.arraystore.StaticArrayStorePartition;
+import krati.store.arraystore.StaticDataArray;
+import krati.store.datastore.DynamicDataStore;
+import krati.store.datastore.StaticDataStore;
 import krati.util.FnvHashFunction;
 
 /**
  * StoreFactory offers a standard static API for creating different data stores including
- * {@link krati.store.ArrayStore ArrayStore} and {@link krati.store.DataStore DataStore},
+ * {@link krati.store.arraystore.ArrayStore ArrayStore} and {@link krati.store.datastore.DataStore DataStore},
  * which are handling byte array based keys and values.
  * 
  * @author jwu
@@ -47,7 +47,7 @@ import krati.util.FnvHashFunction;
 public class StoreFactory {
     
     /**
-     * Creates a fixed-length {@link krati.store.ArrayStorePartition ArrayStorePartition}.
+     * Creates a fixed-length {@link krati.store.arraystore.ArrayStorePartition ArrayStorePartition}.
      * A configuration file <code>config.properties</code> is created automatically in the store home directory. 
      * 
      * @param config - ArrayStorePartition configuration
@@ -59,7 +59,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a {@link krati.store.ArrayStorePartition ArrayStorePartition} with the default parameters below.
+     * Creates a {@link krati.store.arraystore.ArrayStorePartition ArrayStorePartition} with the default parameters below.
      * 
      * <pre>
      *   batchSize            : 10000
@@ -97,7 +97,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a {@link krati.store.ArrayStorePartition ArrayStorePartition} with the default parameters below.
+     * Creates a {@link krati.store.arraystore.ArrayStorePartition ArrayStorePartition} with the default parameters below.
      * 
      * <pre>
      *   segmentCompactFactor : 0.5
@@ -135,7 +135,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a {@link krati.store.ArrayStorePartition ArrayStorePartition}.
+     * Creates a {@link krati.store.arraystore.ArrayStorePartition ArrayStorePartition}.
      * 
      * @param homeDir              - the store home directory
      * @param idStart              - the partition idStart (i.e. the first index)
@@ -170,7 +170,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a fixed-length {@link krati.store.ArrayStore ArrayStore}.
+     * Creates a fixed-length {@link krati.store.arraystore.ArrayStore ArrayStore}.
      * A configuration file <code>config.properties</code> is created automatically in the store home directory. 
      * 
      * @param config - ArrayStore configuration
@@ -182,7 +182,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a fixed-length {@link krati.store.ArrayStore ArrayStore} with the default parameters below.
+     * Creates a fixed-length {@link krati.store.arraystore.ArrayStore ArrayStore} with the default parameters below.
      * 
      * <pre>
      *   batchSize            : 10000
@@ -217,7 +217,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a fixed-length {@link krati.store.ArrayStore ArrayStore} with the default parameters below.
+     * Creates a fixed-length {@link krati.store.arraystore.ArrayStore ArrayStore} with the default parameters below.
      * 
      * <pre>
      *   segmentCompactFactor : 0.5
@@ -252,7 +252,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a fixed-length {@link krati.store.ArrayStore ArrayStore}.
+     * Creates a fixed-length {@link krati.store.arraystore.ArrayStore ArrayStore}.
      * 
      * @param homeDir              - the store home directory
      * @param length               - the store length (i.e. capacity) which cannot be changed after the store is created
@@ -283,7 +283,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.ArrayStore ArrayStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.arraystore.ArrayStore ArrayStore} which grows its capacity as needed.
      * A configuration file <code>config.properties</code> is created automatically in the store home directory. 
      * 
      * @param config - ArrayStore configuration
@@ -295,7 +295,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.ArrayStore ArrayStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.arraystore.ArrayStore ArrayStore} which grows its capacity as needed.
      * The store created has the default parameters below.
      * 
      * <pre>
@@ -331,7 +331,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.ArrayStore ArrayStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.arraystore.ArrayStore ArrayStore} which grows its capacity as needed.
      * The store created has the default parameters below.
      * 
      * <pre>
@@ -367,7 +367,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.ArrayStore ArrayStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.arraystore.ArrayStore ArrayStore} which grows its capacity as needed.
      * 
      * @param homeDir              - the store home directory
      * @param initialLength        - the initial length (i.e. capacity) which should not be changed after the store is created
@@ -398,7 +398,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a static {@link krati.store.DataStore DataStore} with a fixed-capacity.
+     * Creates a static {@link krati.store.datastore.DataStore DataStore} with a fixed-capacity.
      * A configuration file <code>config.properties</code> is created automatically in the store home directory. 
      * 
      * @param config - DataStore configuration
@@ -410,7 +410,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a fixed-capacity {@link krati.store.DataStore DataStore} with the default parameters below.
+     * Creates a fixed-capacity {@link krati.store.datastore.DataStore DataStore} with the default parameters below.
      * 
      * <pre>
      *   batchSize            : 10000
@@ -445,7 +445,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a fixed-capacity {@link krati.store.DataStore DataStore} with the default parameters below.
+     * Creates a fixed-capacity {@link krati.store.datastore.DataStore DataStore} with the default parameters below.
      * 
      * <pre>
      *   segmentCompactFactor : 0.5
@@ -480,7 +480,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a fixed-capacity {@link krati.store.DataStore DataStore}.
+     * Creates a fixed-capacity {@link krati.store.datastore.DataStore DataStore}.
      * 
      * @param homeDir              - the store home directory
      * @param capacity             - the store capacity which cannot be changed after the store is created
@@ -512,7 +512,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * A configuration file <code>config.properties</code> is created automatically in the store home directory. 
      * 
      * @param config - DataStore configuration
@@ -524,7 +524,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * The store created has the default parameters below:
      * 
      * <pre>
@@ -567,7 +567,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * The store created has the default parameters below:
      * 
      * <pre>
@@ -610,7 +610,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * The store created has the default parameters below:
      * 
      * <pre>
@@ -653,7 +653,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * 
      * <p>
      * It is recommended to have an <code>initialCapacity</code> which is large enough to hold the total number of keys
@@ -692,7 +692,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * A configuration file <code>config.properties</code> is created automatically in the store home directory. 
      * 
      * @param config - DataStore configuration
@@ -704,7 +704,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * The store created has the default parameters below.
      * 
      * <pre>
@@ -754,7 +754,7 @@ public class StoreFactory {
     }
     
     /**
-     * Creates a dynamic {@link krati.store.DataStore DataStore} which grows its capacity as needed.
+     * Creates a dynamic {@link krati.store.datastore.DataStore DataStore} which grows its capacity as needed.
      * The store created has the default parameters below.
      * 
      * <pre>
